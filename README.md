@@ -44,7 +44,7 @@ the resulting coefficient of performance (`COP_HP`).
 - Low-side pressure: 261.3 kPa
 
 ## Results
-![res](Resullts.png)
+![res](Results.png)
 
 ## T-S Diagram
 The T-S diagram shows diffrence between experimental and theoriical cycle
