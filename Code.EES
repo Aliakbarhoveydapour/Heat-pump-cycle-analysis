@@ -1,0 +1,45 @@
+" Heat pump flow rate 100 lph theory "
+" Data given "
+P[1]=1011.3 ; P[2]= 261.3 ; x[4]= 1; x[2]=0 
+" 2 : Condenser outlet " 
+h[2]=Enthalpy(R134a,x=x[2],P=P[1]) 
+T[2]=Temperature(R134a,P=P[1],x=x[2])
+s[2]=Entropy(R134a,P=P[1],x=x[2])
+" 3 : After expansion valve" 
+h[3]=h[2];
+T[3]=Temperature(R134a,P=P[2],h=h[3])
+s[3]=Entropy(R134a,P=P[2],h=h[3])
+" 4 : Evaporator outlet "
+h[4]=Enthalpy(R134a,x=x[4],P=P[2]) 
+T[4]=Temperature(R134a,P=P[2],x=x[4])
+s[4]=Entropy(R134a,P=P[2],x=x[4])
+" 1 : After compressor "
+s[4]=s[1]
+h[1]=Enthalpy(R134a,s=s[4],P=P[1]) 
+T[1]=Temperature(R134a,P=P[1],s=s[4])
+" energy "
+Q_H_th=h[1]-h[2]
+Q_L_th=h[4]-h[3]
+W_in_th=h[1]-h[4]
+COP_HP_th=Q_H_th/W_in_th
+" Heat pump flow rate 100 lph experiment "
+" Data given"
+T[5]=62.2; T[6]=37.2 ; T[7]=-4.3 ; T[8]=12.3
+" 2 : Condenser outlet " 
+s[6]=Entropy(R134a,P=P[1],T=T[6])
+h[6]=Enthalpy(R134a,P=P[1],T=T[6])
+" 3 : After expansion valve"
+s[7]=Entropy(R134a,P=P[2],T=T[7])
+h[7]=Enthalpy(R134a,P=P[2],T=T[7])
+" 4 : Evaporator outlet "
+s[8]=Entropy(R134a,P=P[2],T=T[8])
+h[8]=Enthalpy(R134a,P=P[2],T=T[8])
+" 1 : After compressor "
+s[5]=Entropy(R134a,P=P[1],T=T[5])
+h[5]=Enthalpy(R134a,P=P[1],T=T[5])
+" energy "
+Q_H_ex=h[5]-h[6]
+Q_L_ex=h[8]-h[7]
+W_in_ex=h[5]-h[8]
+COP_HP_ex=Q_H_ex/W_in_ex
+here is an EES code for heat pump i want to ut it on  github give me a title and description and read me for it if it worth to put it on github
