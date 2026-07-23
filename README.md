@@ -47,7 +47,7 @@ the resulting coefficient of performance (`COP_HP`).
 ![res](Results.png)
 
 ## T-S Diagram
-The T-S diagram shows diffrence between experimental and theoriical cycle
+The T-S diagram shows diffrence between experimental and theorical cycle
 ![T-S_Diagram](diagram.png)
 ## Requirements
 
